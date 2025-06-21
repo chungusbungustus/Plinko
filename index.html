@@ -20,6 +20,37 @@
                     <p>Auto</p>
                     <div></div>
                 </button>
+
+                <div id="bet-info">
+                    <div>
+                        <p>Bet Amount</p>
+                        <span>$</span>
+                        <input id="bet-amount" class="bet-option" type="text">
+                    </div>
+                    <div>
+                        <p>Risk</p>
+                        <select name="Risk" id="risk" class="bet-option">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>Rows</p>
+                        <select name="Rows" id="rows" class="bet-option">
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                        </select>
+                    </div>
+                    <button id="drop-ball">Drop Ball</button>
+                </div>
             </div>
             <canvas id="game"></canvas>
         </div>

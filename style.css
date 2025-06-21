@@ -1,5 +1,6 @@
 body {
     background-color: #1E2836;
+    font-family: "Trebuchet MS";
 }
 
 #bigbox {
@@ -25,7 +26,7 @@ body {
 
 #mode-toggle {
     width: 90%;
-    aspect-ratio: 130 / 25;
+    aspect-ratio: 130 / 20;
     border-radius: 999px;
     border: 0;
     background-color: #0F1728;
@@ -63,17 +64,14 @@ body {
 
 #money-counter {
     width: 10%;
-    aspect-ratio: 137 / 50;
+    aspect-ratio: 137 / 40;
     background-color: #0F1728;
     border-radius: 10px;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5%);
-    /* text-align: center;
-    display: grid;
-    place-items: center; */
     color: white;
-    font-family: "Trebuchet MS";
+    
     display: grid;
     text-align: center;
     grid-template-columns: 2% 1fr;
@@ -87,4 +85,80 @@ body {
     top: 0%;
     position: fixed;
     background-color: #0F1728;
+}
+
+#bet-info div {
+    width: 80%;
+    height: 5vh;
+    border-radius: 10px;
+    border: solid #303944;
+    border-width: medium;
+    background-color: #0F172A;
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    transform: translate(5%);
+    transition: all 300ms ease;
+}
+
+#bet-info div:focus-within {
+    border: solid #64758B;  
+    border-width: medium;
+}
+
+#bet-info div span {
+    color: rgb(84, 84, 84);
+    top: 100%;
+    left: 10%;
+    transform: translate(-130%,-150%);
+    position: absolute;
+}
+
+#bet-info div p {
+    position: absolute;
+    transform: translate(0%,-220%);
+    color: white;
+    font-weight: 900;
+}
+
+#drop-ball {
+    width: 90%;
+    height: 7.5vh;
+    border-radius: 10px;
+    border: none;
+    background-color: #22C55D;
+    margin-top: 10%;
+    font-size: medium;
+    font-weight: 900;
+    transition: 300ms ease;
+}
+
+#drop-ball:hover {
+    transition: 300ms ease;
+    background-color: #29e16d;
+}
+
+#drop-ball:active {
+    transition: 100ms ease;
+    background-color: #20b456;
+}
+
+#bet-amount {
+    width: 80%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    font-size: large;
+    border: none;
+    outline: none;
+}
+
+.bet-option {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    font-size: large;
+    border: none;
+    outline: none;
 }
