@@ -41,20 +41,10 @@ class ball {
         this.vY += gravity;
         this.vX *= friction;
 
-        if (this.pos[0] < 0) {
-            this.vX = 0;
-            this.pos[0] = 0;
-        };
-
-        if (this.pos[1] > (canvas.height*0.9)) {
+        if (this.pos[1] > (canvas.height*0.99)) {
             this.vY = 0;
             this.vX =0;
-            this.pos[1] = canvas.height*0.9;
-        };
-
-        if (this.pos[0] > (canvas.width)) {
-            this.pos[0] = canvas.width
-            this.vX =0;
+            this.pos[1] = canvas.height*0.99;
         };
     }
 
