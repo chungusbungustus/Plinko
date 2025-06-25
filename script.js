@@ -31,7 +31,7 @@ class ball {
         this.pos = pos
         this.radius = 120/rows;
         this.mass = this.radius;
-        this.vX = (1 * Math.random()) - 0.5
+        this.vX = (20 * Math.random()) - 10
         this.vY = 0
     }
 
@@ -42,9 +42,7 @@ class ball {
         this.vX *= friction;
 
         if (this.pos[1] > (canvas.height*0.99)) {
-            this.vY = 0;
-            this.vX =0;
-            this.pos[1] = canvas.height*0.99;
+            balls.splice(balls.indexOf(this), 1);
         };
     }
 
@@ -97,7 +95,7 @@ function generatePegs(rows) {
             pegs.push(
                 new peg(
                     [(canvas.width/2)-(((a/2)-0.5)*canvas.width*0.5/rows)+(b*0.5*canvas.width/rows),
-                    ((canvas.height/rows)*(a-3)/1.5)+canvas.height*rows/50],
+                    ((canvas.height/rows)*(a-3)/1.5)+canvas.height*(rows/(rows*50))+(canvas.height*0.2)],
                     60/rows
                 )
             );
@@ -105,7 +103,7 @@ function generatePegs(rows) {
     };
 };
 
-generatePegs(8)
+generatePegs(8);
 
 function animate() {
     requestAnimationFrame(animate);
