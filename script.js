@@ -55,13 +55,26 @@ class peg {
     constructor(pos, radius) {
         this.pos = pos;
         this.radius = (canvas.width*canvas.height)/(rows*10000);
+        this.outerRadiusTransparency = 0
+        this.offet = [0,0]
     }
 
     render() {
         ctx.fillStyle = "White";
         ctx.beginPath();
-        ctx.arc(this.pos[0], this.pos[1], this.radius, 0, Math.PI * 2);
+        ctx.arc(this.pos[0] + this.offet[0], this.pos[1] + this.offet[1], this.radius, 0, Math.PI * 2);
         ctx.fill();
+
+        this.offet[0] *= 0.8;
+        this.offet[1] *= 0.8;
+
+        this.outerRadiusTransparency *= 0.8;
+
+        ctx.globalAlpha = this.outerRadiusTransparency;
+        ctx.beginPath();
+        ctx.arc(this.pos[0] + this.offet[0], this.pos[1] + this.offet[1], this.radius*1.75, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
     }
 }
 
@@ -98,8 +111,10 @@ function collision(ball, peg) {
     let dy = ball.pos[1] - peg.pos[1];
 
     ball.vX += clampNumber(dx,-0.2*ball.radius,0.2 * ball.radius);
-    ball.pos[1]-=ball.vY;
+    ball.pos[1]-=ball.vY*0.9;
     ball.vY = 0;
+
+    peg.offet = [-dx*0.3,-dy*0.3];
 }
 
 let balls = [];
@@ -241,6 +256,7 @@ function animate() {
         pegs.forEach(peg => {
             if (ballCollisionCheck(ball, peg)) {
                 collision(ball, peg);
+                peg.outerRadiusTransparency = 0.8;
             };
         });
 
@@ -264,7 +280,7 @@ function animate() {
     });
     blocks.forEach(block => {
         block.render();
-        block.yOffset = block.yOffset * 0.8
+        block.yOffset *= 0.8;
     });
 };
 
