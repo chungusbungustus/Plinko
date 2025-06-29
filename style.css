@@ -58,8 +58,12 @@ body {
     transition: all 300ms ease;
 }
 
-#mode-toggle.active div{
+#mode-toggle.active div {
     transform: translate(97%, -50%);
+}
+
+#mode-toggle:disabled {
+    opacity: 50%;
 }
 
 #money-counter {
@@ -133,6 +137,10 @@ body {
     transition: 300ms ease;
 }
 
+#drop-ball {
+    content: "Drop Ball";
+}
+
 #drop-ball:hover {
     transition: 300ms ease;
     background-color: #29e16d;
@@ -141,6 +149,10 @@ body {
 #drop-ball:active {
     transition: 100ms ease;
     background-color: #20b456;
+}
+
+#drop-ball.auto-bet {
+    background-color: #FACC14;
 }
 
 #bet-amount {

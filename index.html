@@ -25,14 +25,14 @@
                     <div>
                         <p>Bet Amount</p>
                         <span>$</span>
-                        <input id="bet-amount" class="bet-option" type="text">
+                        <input id="bet-amount" class="bet-option" type="text" value="1">
                     </div>
                     <div>
                         <p>Risk</p>
                         <select name="Risk" id="risk" class="bet-option">
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
+                            <option value="l">Low</option>
+                            <option value="m">Medium</option>
+                            <option value="h">High</option>
                         </select>
                     </div>
                     <div>
@@ -48,10 +48,17 @@
                             <option value="15">15</option>
                             <option value="16">16</option>
                             <option value="30">30</option>
-                            <option value="100">100</option>
+                            <option value="100" disabled>100</option>
+                            <option value="1m" disabled>1m</option>
                         </select>
                     </div>
-                    <button id="drop-ball">Drop Ball</button>
+                    <div>
+                        <p>Betting Rate (seconds)</p>
+                        <input id="bet-rate" class="bet-option" type="text" value="0.1">
+                    </div>
+                    <button id="drop-ball">
+                        <p>Drop Ball</p>
+                    </button>
                 </div>
             </div>
             <canvas id="game"></canvas>
