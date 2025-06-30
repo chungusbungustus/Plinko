@@ -174,3 +174,7 @@ body {
     border: none;
     outline: none;
 }
+
+#bet-rate-container {
+    visibility: hidden;
+}

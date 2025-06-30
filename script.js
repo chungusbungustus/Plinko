@@ -5,6 +5,7 @@ const rowsOption = document.getElementById("rows");
 const riskOption = document.getElementById("risk");
 const betAmountOption = document.getElementById("bet-amount");
 const moneyCounter = document.getElementById("money-amount");
+const betRateContainer = document.getElementById("bet-rate-container");
 const betRate = document.getElementById("bet-rate");
 
 const canvas = document.getElementById("game");
@@ -310,8 +311,10 @@ modeToggleElement.addEventListener("click", () => {
     modeToggleElement.classList.toggle("active");
 
     if (modeToggleElement.classList.contains("active")) {
+        betRateContainer.style.visibility = "visible";
         dropButton.childNodes[1].textContent = "Start Autobet";
     } else {
+        betRateContainer.style.visibility = "hidden";
         dropButton.childNodes[1].textContent = "Drop Ball";
     }
 });
