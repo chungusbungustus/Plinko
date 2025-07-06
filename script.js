@@ -11,7 +11,7 @@ const betRate = document.getElementById("bet-rate");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-const gravity = 0.3;
+const gravity = 0.003*canvas.height;
 const friction = 0.8;
 
 let dropBallIntervel = null;
@@ -31,7 +31,7 @@ const clampNumber = (num, min, max) => {
 class ball {
     constructor(pos) {
         this.pos = pos;
-        this.radius = (canvas.width*canvas.height)/(rows*6000);
+        this.radius = 0.15*canvas.width/rows;
         this.mass = this.radius;
         this.vX = ((30 * Math.random()) - 20)/rows;
         this.vY = 0;
@@ -55,7 +55,7 @@ class ball {
 class peg {
     constructor(pos, radius) {
         this.pos = pos;
-        this.radius = (canvas.width*canvas.height)/(rows*10000);
+        this.radius = (canvas.width)/(rows*16);
         this.outerRadiusTransparency = 0
         this.offet = [0,0]
     }
